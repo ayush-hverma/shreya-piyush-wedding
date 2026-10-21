@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600&family=Great+Vibes&family=Italiana&family=Tiro+Devanagari+Hindi&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: 'DM Sans', sans-serif; color: #291C1A; background: #F8F0E3; font-synthesis: none; text-rendering: optimizeLegibility; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #F8F0E3; }
+* { box-sizing: border-box; }
+::selection { background: #B5965A; color: #fff9ef; }
+:focus-visible { outline: 2px solid #B5965A; outline-offset: 4px; }
+
+@layer components {
+  .section-shell { @apply mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-28 lg:px-10; }
+  .eyebrow { @apply text-[10px] font-semibold uppercase tracking-[0.28em] text-gold sm:text-xs; }
+  .display { @apply font-display font-medium tracking-[-0.025em]; }
+  .gold-rule { @apply h-px w-16 bg-gold; }
+  .ornament { @apply font-display text-gold/80; }
+  .luxury-button { @apply inline-flex items-center justify-center border border-gold bg-maroon px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-cream transition hover:bg-wine disabled:cursor-not-allowed disabled:opacity-50; }
+  .outline-button { @apply inline-flex items-center justify-center border border-gold/70 px-6 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink transition hover:bg-gold hover:text-white; }
+}
+
+.cloud { position: absolute; border-radius: 999px; filter: blur(2px); background: rgba(255,255,255,.7); }
+.cloud::before, .cloud::after { content: ''; position: absolute; border-radius: 50%; background: inherit; }
+.cloud::before { width: 55%; height: 120%; left: 18%; top: -55%; }
+.cloud::after { width: 40%; height: 90%; right: 10%; top: -35%; }
+.hero-sky { background: linear-gradient(180deg, #73c8f2 0%, #9edaf4 60%, #d6edf7 100%); }
+.hero-vignette { background: radial-gradient(circle at 50% 65%, rgba(255,255,255,.16), transparent 45%), linear-gradient(180deg, rgba(0,0,0,.04), transparent 28%, rgba(41,28,26,.08)); }
+.pattern { background-image: radial-gradient(circle at 1px 1px, rgba(181,150,90,.20) 1px, transparent 0); background-size: 26px 26px; }
+.maroon-pattern { background-image: radial-gradient(circle at 1px 1px, rgba(181,150,90,.16) 1px, transparent 0); background-size: 22px 22px; }
+
+/* ---------- festive motion ---------- */
+.petal { position: absolute; top: -6vh; border-radius: 80% 0 80% 0; opacity: .85; animation: petal-fall var(--dur) linear var(--delay) infinite; will-change: transform; }
+@keyframes petal-fall {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(calc(var(--drift) * -.6), 55vh, 0) rotate(260deg); }
+  100% { transform: translate3d(var(--drift), 112vh, 0) rotate(560deg); }
+}
+
+/* carved lattice for the gate doors */
+.jali { background:
+  radial-gradient(circle at 50% 50%, transparent 4px, rgba(181,150,90,.32) 4.5px 5.5px, transparent 6px) 0 0 / 16px 16px,
+  radial-gradient(circle at 50% 50%, rgba(181,150,90,.4) 0 1.2px, transparent 1.6px) 8px 8px / 16px 16px,
+  rgba(66,19,30,.35); }
+
+/* marigold toran with hanging strands */
+.toran { position: absolute; inset: 0 0 auto 0; height: 90px; display: flex; justify-content: space-around; pointer-events: none; z-index: 1; }
+.toran::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 16px; background: radial-gradient(circle at 8px 8px, #fbbf24 0 4px, #f97316 4.5px 7px, transparent 7.5px) 0 0 / 16px 16px repeat-x; filter: drop-shadow(0 2px 2px rgba(66,19,30,.25)); }
+.toran-strand { position: relative; top: 10px; width: 2px; height: var(--len); background: repeating-linear-gradient(#f59e0b 0 6px, #ea580c 6px 12px); transform-origin: top center; animation: sway 3.2s ease-in-out var(--d) infinite alternate; }
+.toran-strand::after { content: ''; position: absolute; bottom: -10px; left: -8px; width: 18px; height: 18px; border-radius: 50%; background: repeating-conic-gradient(#fbbf24 0 14deg, #f97316 14deg 28deg); box-shadow: 0 2px 4px rgba(66,19,30,.3); }
+.toran-strand.leaf::after { left: -7px; width: 16px; height: 26px; bottom: -22px; border-radius: 0 100% 0 100%; background: linear-gradient(135deg, #4d7c0f, #15803d); transform: rotate(45deg); }
+@keyframes sway { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
+
+.diya-flame { width: 10px; height: 18px; border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%; background: radial-gradient(ellipse at 50% 75%, #fff7cc 0 25%, #fbbf24 45%, #f97316 75%, transparent 80%); filter: drop-shadow(0 0 8px rgba(251,191,36,.9)); transform-origin: bottom center; animation: flicker 1.6s ease-in-out infinite alternate; }
+@keyframes flicker { 0% { transform: scale(1, 1) rotate(-2deg); } 35% { transform: scale(.92, 1.08) rotate(2deg); } 70% { transform: scale(1.05, .95) rotate(-1deg); } 100% { transform: scale(.96, 1.04) rotate(1deg); } }
+
+.gold-shimmer { background: linear-gradient(110deg, #8a6a2e 0%, #e9cf8a 25%, #b5965a 45%, #f3dfa6 60%, #8a6a2e 100%); background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 5s linear infinite; }
+@keyframes shimmer { to { background-position: -250% 0; } }
+
+.card-glow { position: relative; }
+.card-glow::before { content: ''; position: absolute; inset: -1px; background: linear-gradient(120deg, transparent 30%, rgba(233,207,138,.55) 50%, transparent 70%) 200% 0 / 250% 100%; opacity: 0; transition: opacity .4s; pointer-events: none; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); padding: 1px; }
+.card-glow:hover::before { opacity: 1; animation: shimmer-bg 1.6s linear infinite; }
+@keyframes shimmer-bg { to { background-position: -50% 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .petal, .toran-strand, .diya-flame, .gold-shimmer, .animate-spin-slow { animation: none !important; }
+  .petal { display: none; }
+}
+
+/* ---------- royal maroon invite ---------- */
+.royal-bg {
+  background-color: #4a0f1c;
+  background-image:
+    radial-gradient(ellipse at 50% 30%, rgba(140, 32, 52, .55), transparent 65%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23b5965a' stroke-opacity='.13' stroke-width='1'%3E%3Cpath d='M32 20c4 6 4 10 0 12-4-2-4-6 0-12zM32 44c4-6 4-10 0-12-4 2-4 6 0 12zM20 32c6-4 10-4 12 0-2 4-6 4-12 0zM44 32c-6-4-10-4-12 0 2 4 6 4 12 0z'/%3E%3Ccircle cx='32' cy='32' r='2'/%3E%3Ccircle cx='0' cy='0' r='3'/%3E%3Ccircle cx='64' cy='0' r='3'/%3E%3Ccircle cx='0' cy='64' r='3'/%3E%3Ccircle cx='64' cy='64' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+.garland-h { background: radial-gradient(circle at 9px 9px, #fde047 0 3px, #fbbf24 3.5px 5px, #f97316 5.5px 8.5px, transparent 9px) 0 0 / 17px 18px repeat-x; filter: drop-shadow(0 3px 3px rgba(0,0,0,.35)); }
+.garland-v { background: radial-gradient(circle at 9px 9px, #fde047 0 3px, #fbbf24 3.5px 5px, #f97316 5.5px 8.5px, transparent 9px) 0 0 / 18px 16px repeat-y; filter: drop-shadow(2px 0 3px rgba(0,0,0,.35)); }
+.marigold { display: block; border-radius: 50%; background: radial-gradient(circle, #fde68a 0 12%, transparent 13%), repeating-conic-gradient(#fbbf24 0 10deg, #f97316 10deg 20deg); box-shadow: inset 0 0 6px rgba(154,52,18,.6), 0 3px 6px rgba(0,0,0,.35); }
+.rose { display: block; border-radius: 50%; background: radial-gradient(circle, #881337 0 10%, #e11d48 11% 24%, #9f1239 25% 32%, #e11d48 33% 50%, #9f1239 51% 58%, #be123c 59%); box-shadow: 0 3px 6px rgba(0,0,0,.4); }
+.leaf { display: block; border-radius: 0 100% 0 100%; background: linear-gradient(135deg, #65a30d, #166534); }
+.ganesha-gold {
+  -webkit-mask: url('/assets/art/ganesha.png') center / contain no-repeat;
+  mask: url('/assets/art/ganesha.png') center / contain no-repeat;
+  background: linear-gradient(160deg, #fbe7b0 0%, #e2c27a 30%, #b5965a 55%, #8a6a2e 75%, #e9cf8a 100%);
+}
+.gold-text { background: linear-gradient(180deg, #fbe7b0, #d8b56a 55%, #b5965a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+html[lang="hi"] [class*="tracking-"] { letter-spacing: normal !important; }
