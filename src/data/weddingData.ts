@@ -51,7 +51,7 @@ export const weddingData = {
     { src: imageThree, alt: 'Couple photo 3', position: 'center 32%' },
   ] as CoupleImage[],
   thingsToKnow: [
-    { title: 'Contact', body: '9811587141 · 9811165025 · 9999016181 · 9650254118 · 9650017141', link: 'tel:+919650017141', linkLabel: 'Call 9650017141' },
+    { title: 'Contact', body: '7428027321 · 9582503161', link: 'tel:7428027321'},
     { title: 'A gentle reminder', body: 'Please arrive 30 minutes before each celebration. Come comfortable, come festive, come ready to celebrate.' },
   ],
 }
