@@ -10,10 +10,15 @@ const Corner = ({ className }: { className: string }) => <svg viewBox="0 0 60 60
   <path d="M10 22c8 0 12-4 12-12M22 22c0-6 4-8 8-8" /><circle cx="22" cy="22" r="2.5" fill="currentColor" />
 </svg>
 
-function Person({ name, lines, delay }: { name: string; lines: string[]; delay: number }) {
+function Person({ name, lines, delay, linesFirst }: { name: string; lines: string[][]; delay: number; linesFirst?: boolean }) {
+  const family = <div className="space-y-3">{lines.map(([label, names]) => <div key={label}>
+    <p className="font-serif text-base italic text-gold sm:text-lg">{label}</p>
+    <p className="font-serif text-lg leading-7 text-wine/80 sm:text-xl">{names}</p>
+  </div>)}</div>
   return <motion.div {...rise(delay)}>
+    {linesFirst && family}
     <p className="px-4 py-1 font-script text-6xl leading-normal text-maroon sm:text-7xl">{name}</p>
-    {lines.map(line => <p key={line} className="font-serif text-base leading-7 text-wine/75 sm:text-lg">{line}</p>)}
+    {!linesFirst && family}
   </motion.div>
 }
 
@@ -30,10 +35,10 @@ export function Invitation() {
       <motion.div {...rise(0)} className="flex justify-center"><GaneshaMark className="h-16 w-12" /></motion.div>
       <motion.p {...rise(.1)} className="mt-2 font-deva text-sm text-maroon">॥ श्री गणेशाय नमः ॥</motion.p>
       <motion.p {...rise(.2)} className="mt-6 font-serif text-sm italic text-gold sm:text-base">{t.invite.eyebrow}</motion.p>
-      <motion.p {...rise(.3)} className="mt-3 font-serif text-2xl font-semibold text-wine sm:text-3xl">{t.invite.hosts.map((host, i) => <span key={host}>{i > 0 && ` ${t.invite.and} `}<span className="whitespace-nowrap">{host}</span></span>)}</motion.p>
+      {/* <motion.p {...rise(.3)} className="mt-3 font-serif text-2xl font-semibold text-wine sm:text-3xl">{t.invite.hosts.map((host, i) => <span key={host}>{i > 0 && ` ${t.invite.and} `}<span className="whitespace-nowrap">{host}</span></span>)}</motion.p> */}
       <motion.p {...rise(.4)} className="mx-auto mt-3 max-w-md font-serif text-lg leading-8 text-wine/80">{t.invite.request}</motion.p>
 
-      <div className="mt-6"><Person name={t.invite.bride} lines={t.invite.brideLines.slice(1)} delay={.5} /></div>
+      <div className="mt-6"><Person name={t.invite.bride} lines={t.invite.brideLines} delay={.5} linesFirst /></div>
       <motion.div {...rise(.6)} className="my-4 flex items-center justify-center gap-3 text-gold" aria-hidden="true">
         <span className="h-px w-14 bg-gold/60" /><span className="rose h-4 w-4" /><span className="font-serif text-xl italic text-maroon">{t.invite.with}</span><span className="rose h-4 w-4" /><span className="h-px w-14 bg-gold/60" />
       </motion.div>

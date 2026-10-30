@@ -34,8 +34,8 @@ export const weddingData = {
   blessing: 'By the grace of God and with the blessings of their elders, two hearts begin their journey of forever.',
   invitation: 'to join them as they celebrate love, laughter, and a lifetime together.',
   lineage: [
-    { role: 'The Bride', name: 'Shreya', lines: ['Daughter of Mrs. Bhanu Grover and Mr. Amit Grover', 'Granddaughter of Mrs. Vinay Grover and Late Shri Harish Grover'] },
-    { role: 'The Groom', name: 'Piyush', lines: ['Son of Mrs. Rekha Verma and Mr. Rakesh Verma', 'Grandson of Mrs. Kiran Devi and Late Thakur Jagdish Prasad Verma'] },
+    { role: 'The Bride', name: 'Shreya', lines: ['Granddaughter of Mrs. Vinay Grover and Late Shri Harish Grover', 'Daughter of Mrs. Bhanu Grover and Mr. Amit Grover'] },
+    { role: 'The Groom', name: 'Piyush', lines: ['Grandson of Mrs. Kiran Devi and Late Thakur Jagdish Prasad Verma', 'Son of Mrs. Rekha Verma and Mr. Rakesh Verma'] },
   ] as FamilySide[],
   locationLink: 'https://www.google.com/maps/dir/?api=1&destination=Golden+Apple+Mansion+Road+No+43+Pitampura+Delhi+110034',
   contactLink: 'tel:+919650017141',
