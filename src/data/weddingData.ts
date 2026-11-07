@@ -1,6 +1,6 @@
-import imageOne from './IMG_1494.jpeg'
-import imageTwo from './IMG_1691.jpeg'
-import imageThree from './Snapchat-268013077.jpg'
+import imageOne from './IMG_20261108_005010.jpg'
+import imageTwo from './IMG_20261108_005535.jpg'
+import imageThree from './IMG_20261108_005225.jpg'
 
 export type WeddingEvent = {
   id: string
@@ -48,7 +48,7 @@ export const weddingData = {
   coupleImages: [
     { src: imageOne, alt: 'Couple photo 1', position: 'center 28%' },
     { src: imageTwo, alt: 'Couple photo 2', position: 'center 20%' },
-    { src: imageThree, alt: 'Couple photo 3', position: 'center 32%' },
+    { src: imageThree, alt: 'Couple photo 3', position: 'center 70%' },
   ] as CoupleImage[],
   thingsToKnow: [
     { title: 'Contact', body: '7428027321 · 9582503161', link: 'tel:7428027321'},
