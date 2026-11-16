@@ -48,7 +48,7 @@ const hi: typeof en = {
     title: 'मांगलिक कार्यक्रम',
     map: 'नक्शा देखें',
     items: {
-      engagement: { title: 'सगाई', eyebrow: 'अटूट बंधन की शुरुआत', date: '7 दिसंबर 2026', time: 'सायं 5 बजे से' },
+      engagement: { title: 'सगन', eyebrow: 'अटूट बंधन की शुरुआत', date: '7 दिसंबर 2026', time: 'सायं 5 बजे से' },
       mehendi: { title: 'मेहंदी', eyebrow: 'रंगों और खुशियों की शाम', date: '10 दिसंबर 2026', time: 'सायं 7 बजे से' },
       wedding: { title: 'शुभ विवाह', eyebrow: 'दो दिल, एक जीवन', date: '11 दिसंबर 2026', time: 'सायं 7 बजे से' },
     },
